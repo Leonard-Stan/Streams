@@ -1,0 +1,50 @@
+public class Premios implements Comparable<Premios>
+{
+    public int invertido;
+    public int premios;
+
+
+
+    public Premios (int invertido, int premios)
+    {
+        this.invertido = invertido;
+        this.premios = premios;
+    }
+
+
+
+    public int getInvertido() {
+        return invertido;
+    }
+
+    public void setInvertido(int invertido) {
+        this.invertido = invertido;
+    }
+
+
+
+    public int getPremios() {
+        return premios;
+    }
+
+    public void setPremios(int premios) {
+        this.premios = premios;
+    }
+
+    @Override
+    public int compareTo(Premios otro)
+    {
+        if (this.invertido == otro.getInvertido())
+        {
+            return this.premios - otro.premios;
+        }else
+            return this.invertido - otro.invertido;
+    }
+
+
+    public String toString()
+    {
+        return  invertido+" --- "+ premios;
+    }
+
+}
